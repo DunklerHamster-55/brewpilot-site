@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-launch="soon">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BrewPilot — Your personal coffee coach for iPhone</title>
+<meta name="description" content="After every espresso, BrewPilot tells you exactly what to change on your grinder. Offline, no account, no data collection. Free for iPhone.">
+<link rel="canonical" href="https://brew-pilot.com/en/">
+<link rel="alternate" hreflang="de-CH" href="https://brew-pilot.com/">
+<link rel="alternate" hreflang="en" href="https://brew-pilot.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://brew-pilot.com/">
+<meta name="theme-color" content="#F5EDE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1310" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+  <!-- Nach der Freigabe eintragen (Smart App Banner):
+       <meta name="apple-itunes-app" content="app-id=1234567890"> -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BrewPilot">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="BrewPilot — Your personal coffee coach for iPhone">
+<meta property="og:description" content="After every espresso, BrewPilot tells you exactly what to change on your grinder. Offline, no account, no data collection. Free for iPhone.">
+<meta property="og:url" content="https://brew-pilot.com/en/">
+<meta property="og:image" content="https://brew-pilot.com/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Your personal coffee coach — BrewPilot">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+<link rel="preload" as="image" href="../assets/shot-coach.webp" type="image/webp" fetchpriority="high">
+<script>(function(){try{var t=localStorage.getItem('bp-theme');
+if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<style>*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#F5EDE6; --bg2:#EEE1D5; --card:#FFFFFF; --ink:#2A1F1B; --sub:#6B5A50;
+  --copper:#8D6E63; --copper-deep:#7A5C50; --line:rgba(42,31,27,.12);
+  --band:#2A1F1B; --band-ink:#F5EDE6; --band-sub:#CBB8AC; --band-accent:#BC9A8A;
+  --shadow:0 24px 60px -20px rgba(42,31,27,.45);
+  --shadow-sm:0 20px 50px -18px rgba(42,31,27,.40);
+  --maxw:1060px;
+}
+html[data-theme="dark"]{
+  --bg:#1C1310; --bg2:#241914; --card:#2A1F1B; --ink:#F5EDE6; --sub:#C9B6AB;
+  --copper:#A9887A; --copper-deep:#C4A294; --line:rgba(245,237,230,.14);
+  --band:#14100E; --band-ink:#F5EDE6; --band-sub:#B8A296; --band-accent:#BC9A8A;
+  --shadow:0 24px 60px -20px rgba(0,0,0,.7);
+  --shadow-sm:0 20px 50px -18px rgba(0,0,0,.65);
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+picture{display:contents}
+a{color:var(--copper-deep)}
+a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:3px solid var(--copper);outline-offset:3px;border-radius:6px}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--card);
+  color:var(--ink);padding:12px 18px;border-radius:0 0 10px 0;font-weight:600}
+.skip:focus{left:0}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:24px;padding-right:24px}
+
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;
+  padding:10px 20px;background:color-mix(in srgb,var(--bg) 86%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+@supports not (backdrop-filter:blur(1px)){header{background:var(--bg)}}
+header .name{font-size:18px;letter-spacing:-.2px;font-weight:700}
+header .spacer{flex:1}
+.langsw{display:flex;gap:2px;background:var(--bg2);border:1px solid var(--line);
+  border-radius:999px;padding:3px}
+.langsw a{border-radius:999px;padding:6px 14px;font-size:14px;font-weight:700;
+  text-decoration:none;color:var(--sub);line-height:1.2}
+.langsw a[aria-current="true"]{background:var(--copper);color:#FFF}
+.themebtn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;
+  border-radius:999px;border:1px solid var(--line);background:var(--bg2);
+  color:var(--ink);cursor:pointer;padding:0}
+.themebtn:hover{border-color:var(--copper)}
+html[data-theme="dark"] .i-sun{display:block}
+html[data-theme="dark"] .i-moon{display:none}
+.i-sun{display:none}
+
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-top:56px;padding-bottom:64px}
+.hero .col{flex:1 1 340px;min-width:0}
+.hero .shotcol{flex:0 1 300px;margin:0 auto}
+.kicker-pill{margin:0 0 14px;display:inline-block;font-size:14px;font-weight:600;
+  letter-spacing:.4px;color:var(--copper-deep);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;background:var(--card)}
+h1{margin:0 0 16px;font-size:clamp(38px,6vw,58px);line-height:1.05;
+  letter-spacing:-1.5px;font-weight:800}
+.hero-sub{margin:0 0 26px;font-size:20px;color:var(--sub);max-width:34ch}
+.shot{width:100%;max-width:320px;border-radius:32px;box-shadow:var(--shadow)}
+
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.soon-chip{display:inline-flex;align-items:center;gap:8px;background:var(--ink);
+  color:var(--bg);border-radius:12px;padding:12px 20px;font-size:16px;font-weight:600}
+.soon-dot{width:8px;height:8px;border-radius:99px;background:var(--copper);display:inline-block}
+.soon-note{margin:12px 0 0;font-size:14px;color:var(--sub)}
+.badge{display:inline-flex;align-items:center;gap:11px;background:#000;color:#FFF;
+  border:1px solid rgba(255,255,255,.35);border-radius:11px;padding:9px 18px 9px 14px;
+  text-decoration:none}
+.badge:hover{color:#FFF}
+.badge .b1{font-size:11px;letter-spacing:.2px}
+.badge .b2{font-size:20px;font-weight:600;letter-spacing:-.3px;margin-top:1px}
+.badge .lines{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.badge-off{opacity:.38;filter:grayscale(1);pointer-events:none}
+html:not([data-launch="store"]) .when-store{display:none}
+html[data-launch="store"] .when-soon{display:none}
+
+.band-soft{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:flex;flex-wrap:wrap;align-items:center;gap:48px;padding-top:64px;padding-bottom:64px}
+.steps .col{flex:1 1 380px;min-width:0}
+.eyebrow{margin:0 0 8px;font-size:14px;font-weight:700;letter-spacing:1.2px;
+  text-transform:uppercase;color:var(--copper-deep)}
+h2{margin:0 0 28px;font-size:clamp(28px,4vw,40px);letter-spacing:-.8px;line-height:1.1}
+ol.steplist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px}
+ol.steplist li{display:flex;gap:16px;align-items:flex-start}
+.stepnum{flex:none;width:38px;height:38px;border-radius:999px;background:var(--copper);
+  color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+.stepnum+div strong{font-size:19px;display:block;margin-bottom:2px}
+.stepnum+div span{color:var(--sub)}
+figure.quote{margin:28px 0 0;padding:18px 22px;background:var(--card);
+  border-left:4px solid var(--copper);border-radius:0 14px 14px 0;
+  box-shadow:0 8px 24px -14px rgba(42,31,27,.3)}
+figure.quote blockquote{margin:0;font-size:19px;font-weight:600;letter-spacing:-.2px}
+figure.quote figcaption{margin-top:6px;font-size:14px;color:var(--sub)}
+
+.features{padding-top:72px;padding-bottom:8px}
+.features>h2{margin-bottom:8px;text-align:center}
+.feat-sub{margin:0 auto 24px;color:var(--sub);text-align:center;max-width:52ch}
+.feat{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding:40px 0;
+  border-top:1px solid var(--line)}
+@media (min-width:820px){.feat.alt{flex-direction:row-reverse}}
+.feat .col{flex:1 1 360px;min-width:0}
+.feat .shotcol{flex:0 1 270px;margin:0 auto}
+.feat h3{margin:0 0 8px;font-size:26px;letter-spacing:-.5px}
+.feat p{margin:0 0 18px;color:var(--sub);max-width:48ch}
+.feat .shot{max-width:290px;border-radius:28px;box-shadow:var(--shadow-sm)}
+ul.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+ul.ticks li{display:flex;gap:10px;align-items:flex-start}
+ul.ticks svg{flex:none;margin-top:4px}
+
+.share{display:flex;flex-wrap:wrap;gap:28px;align-items:center;margin:0 0 64px;
+  padding:34px;background:var(--bg2);border:1px solid var(--line);border-radius:22px}
+.share .col{flex:1 1 320px}
+.share h3{margin:0 0 8px;font-size:26px;letter-spacing:-.5px}
+.share p{margin:0;color:var(--sub);max-width:52ch}
+.share ul{flex:1 1 280px}
+
+.privacy{background:var(--band);color:var(--band-ink);padding-top:72px;padding-bottom:72px}
+.privacy .eyebrow{color:var(--band-accent)}
+.privacy h2{margin-bottom:12px}
+.privacy .lead{margin:0 0 32px;color:var(--band-sub);max-width:56ch}
+.privgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.privgrid>div{background:rgba(245,237,230,.06);border:1px solid rgba(245,237,230,.14);
+  border-radius:16px;padding:20px}
+.privgrid strong{display:block;margin-bottom:4px;font-size:18px}
+.privgrid span{color:var(--band-sub);font-size:15px}
+.priv-site{margin:26px 0 0;font-size:15px;color:var(--band-sub)}
+
+.roasters{padding-top:72px;padding-bottom:72px}
+.roasters .row{display:flex;flex-wrap:wrap;gap:40px}
+.roasters .lead-col{flex:1 1 300px}
+.roasters .lead-col h2{margin:0;font-size:clamp(26px,3.5vw,36px);letter-spacing:-.7px;
+  line-height:1.15;max-width:16ch}
+.roasters .body-col{flex:1.4 1 380px;min-width:0}
+.roasters .body-col p:first-of-type{margin:0 0 16px}
+.roasters .body-col p+p{margin:0 0 22px;color:var(--sub)}
+.mailbtn{display:inline-block;background:var(--copper);color:#FFF;text-decoration:none;
+  font-weight:600;border-radius:12px;padding:12px 22px}
+.mailbtn:hover{background:var(--copper-deep);color:#FFF}
+
+.faq{background:var(--bg2);border-top:1px solid var(--line);padding-top:72px;padding-bottom:72px}
+.faq .wrap{max-width:760px}
+.faq h2{text-align:center}
+.faqlist{display:flex;flex-direction:column;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 20px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;padding:16px 0;font-weight:600;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary .plus{color:var(--copper);font-size:22px;line-height:1;flex:none;
+  transition:transform .18s ease}
+details[open] summary .plus{transform:rotate(45deg)}
+details>p{margin:0;padding:0 0 18px;color:var(--sub)}
+
+footer{background:var(--band);color:var(--band-sub)}
+footer a{color:var(--band-sub);text-decoration:none}
+footer a:hover{color:var(--band-ink);text-decoration:underline}
+.foot-top{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start;
+  padding-top:44px;padding-bottom:0}
+.foot-brand{flex:1 1 260px;display:flex;gap:12px;align-items:center}
+.foot-brand strong{color:var(--band-ink);display:block}
+.foot-brand span{font-size:14px}
+.foot-nav{flex:1 1 180px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.foot-mail{flex:1 1 220px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.foot-bottom{padding-top:26px;padding-bottom:30px;font-size:13px;display:flex;
+  flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+html[data-theme="dark"] .only-light{display:none}
+html:not([data-theme="dark"]) .only-dark{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .hero{padding-top:40px;padding-bottom:48px}
+  .hero-sub{font-size:18px}
+  header{padding:8px 14px;gap:8px}
+  header .name{font-size:16px}
+  .langsw a{padding:6px 11px}
+  .share{padding:24px}
+}</style>
+<script type="application/ld+json">{
+  "@context":"https://schema.org","@type":"SoftwareApplication",
+  "name":"BrewPilot","applicationCategory":"LifestyleApplication",
+  "operatingSystem":"iOS 26","inLanguage":["de-CH","en"],
+  "description":"After every espresso, BrewPilot tells you exactly what to change on your grinder. Offline, no account, no data collection. Free for iPhone.",
+  "url":"https://brew-pilot.com/en/","image":"https://brew-pilot.com/assets/og-en.png",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"CHF"},
+  "author":{"@type":"Organization","name":"BrewPilot","url":"https://brew-pilot.com",
+    "email":"info@brew-pilot.com"}
+}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does BrewPilot cost?","acceptedAnswer":{"@type":"Answer","text":"The app is free, with no ads and nothing you have to buy. An optional Pro version with extra features will come later; everything that is free today stays free for everyone who starts now."}},{"@type":"Question","name":"Do I need an account?","acceptedAnswer":{"@type":"Answer","text":"No. No registration, no login, no forced cloud — open the app and start right away."}},{"@type":"Question","name":"Which devices are supported?","acceptedAnswer":{"@type":"Answer","text":"iPhone running iOS 26 or later. Some features (text understanding on import, coach chat) use Apple Intelligence and only appear on devices that support it — the app works fully without them, you just miss those extras. iPad and Apple Watch are planned."}},{"@type":"Question","name":"Does BrewPilot work for filter coffee?","acceptedAnswer":{"@type":"Answer","text":"Yes. Besides the espresso dial-in there are guided brew plans for V60, Chemex, AeroPress and French press — with phases, target weights and a timer."}},{"@type":"Question","name":"What happens to my data?","acceptedAnswer":{"@type":"Answer","text":"It stays on your iPhone. BrewPilot has no server, collects nothing and analyzes nothing. Your data only leaves the device when you share something yourself — and it is part of your regular iPhone backup."}},{"@type":"Question","name":"Which languages is the app available in?","acceptedAnswer":{"@type":"Answer","text":"German and English."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <img src="../assets/icon-96.png" alt="" width="34" height="34" style="border-radius:8px">
+  <span class="name">BrewPilot</span>
+  <span class="spacer"></span>
+  <nav class="langsw" aria-label="Language">
+    <a href="/en/" aria-current="true" lang="en">EN</a>
+    <a href="/" lang="de-CH" hreflang="de-CH">DE</a>
+  </nav>
+  <button class="themebtn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <svg class="i-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+    <svg class="i-moon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6 8.5 8.5 0 1 0 20.4 14.2z"/></svg>
+  </button>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero" aria-labelledby="hero-h">
+    <div class="col">
+      <p class="kicker-pill">For iPhone · iOS 26 · free</p>
+      <h1 id="hero-h">Your personal coffee coach</h1>
+      <p class="hero-sub">No more guesswork at the espresso machine. After every shot, BrewPilot tells you exactly what to change — for your grinder.</p>
+      
+      <div class="when-soon">
+        <div class="cta-row">
+          <span class="soon-chip"><span class="soon-dot"></span>Coming soon</span>
+          <span class="badge badge-off" aria-hidden="true"><svg width="26" height="30" viewBox="0 0 22 26" fill="#FFF" aria-hidden="true"><path d="M18.4 13.8c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 4-1s2.4 1 4 1c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-3.3-1.3-3.3-4.7zM15.3 4.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.7-.7 3.6-1.7z"/></svg><span class="lines"><span class="b1">Download on the</span><span class="b2">App Store</span></span></span>
+        </div>
+        <p class="soon-note">BrewPilot is launching on the App Store shortly.</p>
+      </div>
+      <div class="when-store">
+        <a class="badge" href="https://apps.apple.com/app/idAPPID" aria-label="Download BrewPilot on the App Store"><svg width="26" height="30" viewBox="0 0 22 26" fill="#FFF" aria-hidden="true"><path d="M18.4 13.8c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 4-1s2.4 1 4 1c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-3.3-1.3-3.3-4.7zM15.3 4.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.7-.7 3.6-1.7z"/></svg><span class="lines"><span class="b1">Download on the</span><span class="b2">App Store</span></span></a>
+      </div>
+    </div>
+    <div class="shotcol"><picture class="only-light"><source srcset="../assets/shot-coach.webp" type="image/webp"><img src="../assets/shot-coach.png" alt="BrewPilot coach after a shot: 40% confidence, diagnosis “under-extracted — too sour” and a recommendation to grind 5 clicks finer." width="640" height="1380" class="shot" sizes="320px" fetchpriority="high" decoding="async"></picture><picture class="only-dark"><source srcset="../assets/shot-coach-dark.webp" type="image/webp"><img src="../assets/shot-coach-dark.png" alt="BrewPilot coach after a shot: 40% confidence, diagnosis “under-extracted — too sour” and a recommendation to grind 5 clicks finer." width="640" height="1380" class="shot" sizes="320px" fetchpriority="high" decoding="async"></picture></div>
+  </section>
+
+  <section class="band-soft" aria-labelledby="steps-h">
+    <div class="wrap steps">
+      <div class="col">
+        <p class="eyebrow">How it works</p>
+        <h2 id="steps-h">Dial in, in three steps</h2>
+        <ol class="steplist"><li><span class="stepnum" aria-hidden="true">1</span><div><strong>Pull a shot</strong><span>Log dose, time and yield — the sweet-spot timer runs alongside.</span></div></li><li><span class="stepnum" aria-hidden="true">2</span><div><strong>Say how it tastes</strong><span>Too sour, too bitter, too watery, almost there or perfect — one tap.</span></div></li><li><span class="stepnum" aria-hidden="true">3</span><div><strong>Get a concrete instruction</strong><span>No theory — one adjustment on your grinder, with a confidence score showing how close you are.</span></div></li></ol>
+        <figure class="quote">
+          <blockquote>“Set your Eureka Mignon to grind setting 3.3 — 5 clicks finer.”</blockquote>
+          <figcaption>A typical recommendation. Your grinder, your scale.</figcaption>
+        </figure>
+      </div>
+      <div class="shotcol"><picture><source srcset="../assets/shot-empfehlung.webp" type="image/webp"><img src="../assets/shot-empfehlung.png" alt="BrewPilot showing grind setting 3.8 on your own grinder’s scale with a green target zone." width="640" height="1380" class="shot" sizes="320px" loading="lazy" decoding="async"></picture></div>
+    </div>
+  </section>
+
+  <section class="wrap features" aria-labelledby="feat-h">
+    <h2 id="feat-h">What BrewPilot does</h2>
+    <p class="feat-sub">From your first dial-in to the year in review — one calm app, everything on your iPhone.</p>
+    
+      <article class="feat">
+        <div class="col">
+          <h3>Dial-in &amp; brewing</h3>
+          <p>The coach walks you to the sweet spot shot by shot — and handles filter too.</p>
+          <ul class="ticks"><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Coach engine with confidence score</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Sweet-spot timer for extraction</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Guided brew plans for V60, Chemex, AeroPress &amp; French press</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Weather-adaptive grind size</span></li></ul>
+        </div>
+        <div class="shotcol"><picture><source srcset="../assets/shot-pourover.webp" type="image/webp"><img src="../assets/shot-pourover.png" alt="Guided V60 brew plan in BrewPilot: bloom phase with timer and a 30 gram pour target." width="640" height="1380" class="shot" sizes="290px" loading="lazy" decoding="async"></picture></div>
+      </article>
+      <article class="feat alt">
+        <div class="col">
+          <h3>Manage your beans</h3>
+          <p>A new bag is in the app in seconds — and you always know how fresh it is and what a cup costs.</p>
+          <ul class="ticks"><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Import via label photo, shop link from Safari, or from friends</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Freshness tracking from roast date</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Automatic stock deduction</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Cost per cup</span></li></ul>
+        </div>
+        <div class="shotcol"><picture><source srcset="../assets/shot-import.webp" type="image/webp"><img src="../assets/shot-import.png" alt="Bean import via shop link in BrewPilot: the product page is read on your iPhone only." width="640" height="1380" class="shot" sizes="290px" loading="lazy" decoding="async"></picture></div>
+      </article>
+      <article class="feat">
+        <div class="col">
+          <h3>Your progress</h3>
+          <p>Watch yourself get better — across shots, beans and countries.</p>
+          <ul class="ticks"><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Stats for time, ratio and sweet-spot rate</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Coffee Passport with country stamps</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>“Wrapped” year in review</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Leaderboard per bean</span></li></ul>
+        </div>
+        <div class="shotcol"><picture><source srcset="../assets/shot-statistiken.webp" type="image/webp"><img src="../assets/shot-statistiken.png" alt="Brew statistics in BrewPilot: extraction time, ratio, sweet-spot rate and rating history." width="640" height="1380" class="shot" sizes="290px" loading="lazy" decoding="async"></picture></div>
+      </article>
+      <article class="feat alt">
+        <div class="col">
+          <h3>Always at hand</h3>
+          <p>Your last shot, bean freshness and the coach — without opening the app.</p>
+          <ul class="ticks"><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Widgets for home and lock screen</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Live Activity in the Dynamic Island</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Coach chat — runs entirely on device</span></li></ul>
+        </div>
+        <div class="shotcol"><picture class="only-light"><source srcset="../assets/shot-dashboard.webp" type="image/webp"><img src="../assets/shot-dashboard.png" alt="BrewPilot home screen: last shot with recipe, freshness status “currently at peak” and bean stock." width="640" height="1380" class="shot" sizes="290px" loading="lazy" decoding="async"></picture><picture class="only-dark"><source srcset="../assets/shot-dashboard-dark.webp" type="image/webp"><img src="../assets/shot-dashboard-dark.png" alt="BrewPilot home screen: last shot with recipe, freshness status “currently at peak” and bean stock." width="640" height="1380" class="shot" sizes="290px" loading="lazy" decoding="async"></picture></div>
+      </article>
+    <article class="share">
+      <div class="col">
+        <h3>Share, no account needed</h3>
+        <p>Good beans deserve to be passed on. BrewPilot turns them into a file — no account, no cloud in between.</p>
+      </div>
+      <ul class="ticks"><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>AirDrop beans and recipes to friends</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Shared files open straight in the app</span></li><li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--copper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Recipe cards for social media</span></li></ul>
+    </article>
+  </section>
+
+  <section class="privacy" aria-labelledby="priv-h">
+    <div class="wrap">
+      <p class="eyebrow">Privacy</p>
+      <h2 id="priv-h">Your data stays with you</h2>
+      <p class="lead">BrewPilot is a tool, not a data collector. There simply is no server anything could be sent to.</p>
+      <div class="privgrid"><div><strong>No account</strong><span>No sign-up, no login. Open the app and start.</span></div><div><strong>No cloud</strong><span>Everything lives on your iPhone — and in your regular backup.</span></div><div><strong>No data collection</strong><span>No tracking, no analytics, no ad IDs.</span></div><div><strong>On-device AI</strong><span>Coach chat and text understanding run locally via Apple Intelligence.</span></div></div>
+      <p class="priv-site">The same goes for this website: no cookies, no trackers.</p>
+    </div>
+  </section>
+
+  <section class="wrap roasters" aria-labelledby="roast-h">
+    <div class="row">
+      <div class="lead-col">
+        <p class="eyebrow">For roasters</p>
+        <h2 id="roast-h">Your beans, straight into the app</h2>
+      </div>
+      <div class="body-col">
+        <p>BrewPilot users love importing new beans directly from your website — name, origin, roast level, price and photo are picked up automatically. All it takes is two things: structured product data (Shopify, WooCommerce and most systems ship it out of the box) and a readable roast date on the bag. You probably have both already.</p>
+        <p>For roasters who want to go further, a format is in the works that sends a bean plus your recommended recipe into the app via link or QR code — including your suggested grind, dose and ratio. Interested? Get in touch.</p>
+        <a class="mailbtn" href="mailto:info@brew-pilot.com">info@brew-pilot.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">Frequently asked questions</h2>
+      <div class="faqlist"><details><summary>How much does BrewPilot cost?<span class="plus" aria-hidden="true">+</span></summary><p>The app is free, with no ads and nothing you have to buy. An optional Pro version with extra features will come later; everything that is free today stays free for everyone who starts now.</p></details><details><summary>Do I need an account?<span class="plus" aria-hidden="true">+</span></summary><p>No. No registration, no login, no forced cloud — open the app and start right away.</p></details><details><summary>Which devices are supported?<span class="plus" aria-hidden="true">+</span></summary><p>iPhone running iOS 26 or later. Some features (text understanding on import, coach chat) use Apple Intelligence and only appear on devices that support it — the app works fully without them, you just miss those extras. iPad and Apple Watch are planned.</p></details><details><summary>Does BrewPilot work for filter coffee?<span class="plus" aria-hidden="true">+</span></summary><p>Yes. Besides the espresso dial-in there are guided brew plans for V60, Chemex, AeroPress and French press — with phases, target weights and a timer.</p></details><details><summary>What happens to my data?<span class="plus" aria-hidden="true">+</span></summary><p>It stays on your iPhone. BrewPilot has no server, collects nothing and analyzes nothing. Your data only leaves the device when you share something yourself — and it is part of your regular iPhone backup.</p></details><details><summary>Which languages is the app available in?<span class="plus" aria-hidden="true">+</span></summary><p>German and English.</p></details></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-top">
+    <div class="foot-brand">
+      <img src="../assets/icon-96.png" alt="" width="40" height="40" style="border-radius:10px">
+      <div><strong>BrewPilot</strong><span>Your personal coffee coach</span></div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+      <!-- Impressum: in DE/AT gesetzlich verpflichtend, Seite anlegen und Zeile aktivieren
+      <a href="/impressum/">Legal notice</a> -->
+    </nav>
+    <div class="foot-mail">
+      <a href="mailto:support@brew-pilot.com">support@brew-pilot.com</a>
+      <a href="mailto:info@brew-pilot.com">info@brew-pilot.com</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 BrewPilot</span>
+    <span>No cookies, no tracking — not here either.</span>
+  </div>
+</footer>
+<script>(function(){
+  var d=document.documentElement, K='bp-theme';
+  function set(t){d.setAttribute('data-theme',t);
+    try{localStorage.setItem(K,t)}catch(e){}}
+  var b=document.getElementById('theme-toggle');
+  if(b)b.addEventListener('click',function(){
+    set(d.getAttribute('data-theme')==='dark'?'light':'dark');
+  });
+})();</script>
+</body>
+</html>
