@@ -14,8 +14,26 @@
   </url>
   <url>
     <loc>https://brew-pilot.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://brew-pilot.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brew-pilot.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brew-pilot.com/privacy/"/>
+  </url>
+  <url>
+    <loc>https://brew-pilot.com/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://brew-pilot.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brew-pilot.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brew-pilot.com/privacy/"/>
   </url>
   <url>
     <loc>https://brew-pilot.com/support/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://brew-pilot.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brew-pilot.com/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brew-pilot.com/support/"/>
+  </url>
+  <url>
+    <loc>https://brew-pilot.com/en/support/</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://brew-pilot.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brew-pilot.com/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brew-pilot.com/support/"/>
   </url>
 </urlset>
